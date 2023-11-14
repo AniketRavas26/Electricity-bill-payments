@@ -18,7 +18,7 @@ import com.ebp.in.service.ReadingService;
 public class ReadingServiceImpl implements ReadingService {
 
 	@Autowired
-	private ReadingRepository read;
+	private ReadingRepository readingRepository;
 
 	@Autowired
 	private BillService billService;
@@ -29,21 +29,21 @@ public class ReadingServiceImpl implements ReadingService {
 	@Override
 	public Reading selfSubmit(Reading reading) {
 		Double pricePerUnit = reading.getPricePerUnits();
-		Reading reading1 ;
+		Reading reading1 = null;
 		Connection existingConnection = reading.getReadingForConnection();
 		Long connectionId = existingConnection.getConnectionId();
 		if (connectionId == 0) {
 			reading.setPricePerUnits(pricePerUnit);
 			reading.setReadingDate(new Date());
 			reading.setReadingPhoto("Photo");
-			reading1 = read.save(reading);
+			reading1 = readingRepository.save(reading);
 			
 		} else {
 			reading.setReadingForConnection(existingConnection);
 			reading.setPricePerUnits(pricePerUnit);
 			reading.setReadingDate(new Date());
 			reading.setReadingPhoto("Photo");
-			reading1 = read.save(reading);
+			reading1 = readingRepository.save(reading);
 			
 		}
 
@@ -56,7 +56,7 @@ public class ReadingServiceImpl implements ReadingService {
 	 */
 	@Override
 	public Reading findMeterReadingByConsumerNumber(Long consumerNumber) throws NoSuchCustomerException {
-		return read.readMeterReadingByConsumerNumber(consumerNumber)
+		return readingRepository.readMeterReadingByConsumerNumber(consumerNumber)
 				.orElseThrow(() -> new NoSuchCustomerException("Customer Not Exist!"));
 	}
 

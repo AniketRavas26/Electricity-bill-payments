@@ -7,19 +7,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 @Entity(name="users")
-
 @Inheritance(strategy = InheritanceType.JOINED)
-
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_id")
 	private Long userId;
+	
+	@NotNull
 	private String userName;
+	@NotNull
 	private String password;
 
 	public Long getUserId() {

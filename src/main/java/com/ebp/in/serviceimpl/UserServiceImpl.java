@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User changePassword(User user) throws NoSuchUserException {
 		// TODO Auto-generated method stub
-		User oldUser=null;
+		User oldUser;
 		Optional<User> obj=userRepository.readByUserName(user.getUserName());
 		if(obj.isPresent()) {
 			oldUser=obj.get();
