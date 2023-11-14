@@ -34,7 +34,7 @@ public class Reading {
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "connection_id_fk", referencedColumnName = "connectionId", nullable = true)
-	@JsonIgnore
+	//@JsonIgnore
 	private Connection readingForConnection;
 	
 	private Long connectionId;
