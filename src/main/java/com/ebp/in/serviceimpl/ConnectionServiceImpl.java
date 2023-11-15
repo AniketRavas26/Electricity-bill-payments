@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.ebp.in.entity.Connection;
 import com.ebp.in.entity.Customer;
+import com.ebp.in.entity.User;
 import com.ebp.in.exception.NoSuchConnectionException;
 import com.ebp.in.exception.NoSuchCustomerException;
 import com.ebp.in.repository.ConnectionRepository;
@@ -38,7 +39,11 @@ public class ConnectionServiceImpl implements ConnectionService {
 			throw new Exception("Connection already exist with id :" + newConnection.getConnectionId());
 		}
 
+<<<<<<< HEAD
 		Customer customer = customerRepository.findById(newConnection.getUserId()).get();	
+=======
+		Customer customer = customerRepository.findById(newConnection.getUserId()).get();
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 		newConnection.setCustomerConnection(customer);
 		Long userId = customer.getUserId();
 		Connection con;

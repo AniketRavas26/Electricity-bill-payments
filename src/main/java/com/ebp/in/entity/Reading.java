@@ -9,17 +9,27 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+<<<<<<< HEAD
 
 import org.springframework.lang.Nullable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+=======
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 
-/*import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;*/
+import lombok.NoArgsConstructor;
 
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Reading {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long readingId;
@@ -30,6 +40,7 @@ public class Reading {
 	private Double pricePerUnits;
 	
 	@OneToOne(cascade = CascadeType.MERGE)
+<<<<<<< HEAD
 	@JoinColumn(name = "connection_id_fk", referencedColumnName = "connectionId")
 	@JsonIgnore
 	private Connection readingForConnection;
@@ -118,6 +129,14 @@ public class Reading {
 		// TODO Auto-generated constructor stub
 	}
 
+=======
+	@JoinColumn(name = "connection_id_fk", referencedColumnName = "connectionId", nullable = true)
+	//@JsonIgnore
+	private Connection readingForConnection;
+	
+	private Long connectionId;
+
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 	
 
 }

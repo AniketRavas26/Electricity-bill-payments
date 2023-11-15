@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\test\java\com\ebp\in\ElectricityBillPaymentApplicationTests.java
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\test\java\com\ebp\in\customer\CustomerServiceTest.java
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\test\java\com\ebp\in\user\UserTestCases.java
+=======
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\test\java\com\ebp\in\customer\CustomerServiceTest.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\test\java\com\ebp\in\ElectricityBillPaymentApplicationTests.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\test\java\com\ebp\in\user\UserTestCases.java
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b

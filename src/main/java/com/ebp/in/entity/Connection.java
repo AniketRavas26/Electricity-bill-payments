@@ -30,12 +30,19 @@ public class Connection {
 	private Long consumerNumber;
 
 	@OneToOne(cascade = CascadeType.MERGE)
+<<<<<<< HEAD
 	@JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable=true)
+=======
+	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 	@JsonIgnore
 	private Customer customerConnection;
 	
 	@Transient
+<<<<<<< HEAD
 	@Nullable
+=======
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 	private Long userId;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -153,6 +160,9 @@ public class Connection {
 	}
 
 	
+<<<<<<< HEAD
 
 	
+=======
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 }

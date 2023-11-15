@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -14,15 +15,16 @@ public class Address {
 	private Long addressId;
 
 	private int flatOrHouseNumber;
-
+	@NotEmpty(message="buildingname is required")
 	private String buildingName;
-
+	@NotEmpty(message="landmark is required")
 	private String landmark;
-
+	@NotEmpty(message="Village is required")
 	private String village;
-
+	@NotEmpty(message="Taluka is required")
 	private String taluka;
 
+<<<<<<< HEAD
 	@NotNull(message="Please enter your district")
 	private String district;
 	
@@ -30,6 +32,15 @@ public class Address {
 	private String state;
 	
 	@NotNull(message="Please enter your pincode")
+=======
+	@NotEmpty(message="District is required")
+	private String district;
+	
+	@NotEmpty(message="State is required")
+	private String state;
+	
+	@NotEmpty(message="pincode is required")
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 	private String pincode;
 
 	public Long getAddressId() {
@@ -72,11 +83,11 @@ public class Address {
 		this.village = village;
 	}
 
-	public String getTaluk() {
+	public String getTaluka() {
 		return taluka;
 	}
 
-	public void setTaluk(String taluka) {
+	public void setTaluka(String taluka) {
 		this.taluka = taluka;
 	}
 
@@ -107,12 +118,23 @@ public class Address {
 	@Override
 	public String toString() {
 		return "Address [addressId=" + addressId + ", flatOrHouseNumber=" + flatOrHouseNumber + ", buildingName="
-				+ buildingName + ", landmark=" + landmark + ", village=" + village + ", taluk=" + taluka + ", district="
-				+ district + ", state=" + state + ", pincode=" + pincode + "]";
+				+ buildingName + ", landmark=" + landmark + ", village=" + village + ", taluka=" + taluka
+				+ ", district=" + district + ", state=" + state + ", pincode=" + pincode + "]";
 	}
 
+<<<<<<< HEAD
 	public Address(Long addressId, int flatOrHouseNumber, String buildingName, String landmark, String village,
 			String taluka, String district, String state, String pincode) {
+=======
+	public Address(Long addressId, int flatOrHouseNumber,
+			@NotEmpty(message = "buildingname is required") String buildingName,
+			@NotEmpty(message = "landmark is required") String landmark,
+			@NotEmpty(message = "Village is required") String village,
+			@NotEmpty(message = "Taluka is required") String taluka,
+			@NotEmpty(message = "District is required") String district,
+			@NotEmpty(message = "State is required") String state,
+			@NotEmpty(message = "pincode is required") String pincode) {
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 		super();
 		this.addressId = addressId;
 		this.flatOrHouseNumber = flatOrHouseNumber;
@@ -129,6 +151,8 @@ public class Address {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+
 	
 	
 

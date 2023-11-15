@@ -16,6 +16,10 @@ import com.ebp.in.service.UserService;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
+	
+	/*
+	 * User is registering, if already exists then it will handled by DuplicateUserException
+	 */
 
 	@Override
 	public User registerUser(User user) throws DuplicateUserException {
@@ -28,6 +32,10 @@ public class UserServiceImpl implements UserService {
 		}
 		
 	}
+	
+	/*
+	 *If  User is already exists can Login , otherwise it will handled by InvalidLoginCredentialException
+	 */
 
 	@Override
 	public User loginUser(User user) throws InvalidLoginCredentialException {
@@ -36,11 +44,15 @@ public class UserServiceImpl implements UserService {
 				.orElseThrow(() -> new InvalidLoginCredentialException("Invalid Credentials"));
 		
 	}
+	
+	/*
+	 * User can change the password
+	 */
 
 	@Override
 	public User changePassword(User user) throws NoSuchUserException {
 		// TODO Auto-generated method stub
-		User oldUser=null;
+		User oldUser;
 		Optional<User> obj=userRepository.readByUserName(user.getUserName());
 		if(obj.isPresent()) {
 			oldUser=obj.get();
@@ -51,6 +63,10 @@ public class UserServiceImpl implements UserService {
 		}
 		return oldUser;
 	}
+	
+	/*
+	 * We can search User by taking user name
+	 */
 
 	@Override
 	public String forgotPassword(String username) throws Exception {
@@ -59,11 +75,18 @@ public class UserServiceImpl implements UserService {
 		return password.getPassword();
 	}
 
+	/*
+	 * We can search User by taking user Id 
+	 */
+
 	@Override
 	public User searchUserByUsername(String username) throws NoSuchUserException {
 		// TODO Auto-generated method stub
 		return userRepository.readByUserName(username).orElseThrow(() -> new NoSuchUserException("No User Exists!"));
 	}
+	/*
+	 * If user forget the password,he can change the password 
+	 */
 
 	@Override
 	public User searchUserByUserId(int userId) throws NoSuchUserException {

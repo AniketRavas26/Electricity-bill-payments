@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\main\java\com\ebp\in\controller\ConnectionController.java
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\main\java\com\ebp\in\repository\ConnectionRepository.java
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\main\java\com\ebp\in\controller\ReadingController.java
@@ -42,3 +43,49 @@ C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\main\
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\main\java\com\ebp\in\service\ConnectionService.java
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\main\java\com\ebp\in\entity\Address.java
 C:\Users\PKANNEDA\Downloads\Resevation maven\Electricity-bill-payments\src\main\java\com\ebp\in\repository\BillRepository.java
+=======
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\service\PaymentService.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\entity\Customer.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\entity\Reading.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\enums\ConnectionType.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\repository\UserRepository.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\service\BillService.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\controller\ConnectionController.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\repository\ConnectionRepository.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\repository\PaymentRepository.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\entity\Payment.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\serviceimpl\UserServiceImpl.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\serviceimpl\ConnectionServiceImpl.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\DuplicateCustomerException.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\NoSuchConnectionException.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\service\CustomerService.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\serviceimpl\PaymentServiceImpl.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\entity\User.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\controller\BillController.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\entity\Address.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\enums\ConnectionStatus.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\controller\PaymentController.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\enums\PaymentMode.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\CustomGlobalExceptionHandler.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\entity\Connection.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\repository\BillRepository.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\DuplicateUserException.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\repository\ReadingRepository.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\service\UserService.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\serviceimpl\ReadingServiceImpl.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\NoSuchCustomerException.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\controller\CustomerController.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\controller\UserController.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\repository\CustomerRepository.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\ElectricityBillPaymentApplication.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\entity\Bill.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\NoSuchUserException.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\InvalidReadingException.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\service\ConnectionService.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\enums\PaymentStatus.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\serviceimpl\CustomerServiceImpl.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\exception\InvalidLoginCredentialException.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\service\ReadingService.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\controller\ReadingController.java
+C:\Users\aravas\Documents\workspace-spring-tool-suite-4-4.18.1.RELEASE\Electricity-bill-payments\src\main\java\com\ebp\in\serviceimpl\BillServiceImpl.java
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b

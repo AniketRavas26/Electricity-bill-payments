@@ -37,11 +37,11 @@ public class Customer extends User{
 	@NotEmpty(message = "Mobile no is Required")
 	private String mobileNumber;
 	@Column(unique = true, nullable = false)
-	@Email
-	@NotBlank
-	@Pattern(regexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z]+.[a-zA-A]+", message = "enter email in valid format")
+	@NotEmpty(message="please enter your email")
+	@Email(message="email is not valid")
 	private String email;
 	@Column
+	@NotEmpty(message="gender is required")
 	private String gender;
 	
 	

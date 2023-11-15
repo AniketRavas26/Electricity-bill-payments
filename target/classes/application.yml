@@ -1,13 +1,17 @@
 
 server :
- port : 8089
+ port : 8080
 spring:
 
   datasource:
 
     driver-class-name: org.postgresql.Driver
 
+<<<<<<< HEAD
     url: jdbc:postgresql://localhost:5432/newbaseone
+=======
+    url: jdbc:postgresql://localhost:5432/electricitybillpaymentdb
+>>>>>>> b423192b85408e1fe090b5a59aa16a47da93172b
 
     username: postgres
 
