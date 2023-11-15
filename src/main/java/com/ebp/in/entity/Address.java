@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -14,22 +15,22 @@ public class Address {
 	private Long addressId;
 
 	private int flatOrHouseNumber;
-
+	@NotEmpty(message="buildingname is required")
 	private String buildingName;
-
+	@NotEmpty(message="landmark is required")
 	private String landmark;
-
+	@NotEmpty(message="Village is required")
 	private String village;
-
+	@NotEmpty(message="Taluka is required")
 	private String taluka;
 
-	@NotNull
+	@NotEmpty(message="District is required")
 	private String district;
 	
-	@NotNull
+	@NotEmpty(message="State is required")
 	private String state;
 	
-	@NotNull
+	@NotEmpty(message="pincode is required")
 	private String pincode;
 
 	public Long getAddressId() {
@@ -107,12 +108,18 @@ public class Address {
 	@Override
 	public String toString() {
 		return "Address [addressId=" + addressId + ", flatOrHouseNumber=" + flatOrHouseNumber + ", buildingName="
-				+ buildingName + ", landmark=" + landmark + ", village=" + village + ", taluka=" + taluka + ", district="
-				+ district + ", state=" + state + ", pincode=" + pincode + "]";
+				+ buildingName + ", landmark=" + landmark + ", village=" + village + ", taluka=" + taluka
+				+ ", district=" + district + ", state=" + state + ", pincode=" + pincode + "]";
 	}
 
-	public Address(Long addressId, int flatOrHouseNumber, String buildingName, String landmark, String village,
-			String taluka, String district, String state, String pincode) {
+	public Address(Long addressId, int flatOrHouseNumber,
+			@NotEmpty(message = "buildingname is required") String buildingName,
+			@NotEmpty(message = "landmark is required") String landmark,
+			@NotEmpty(message = "Village is required") String village,
+			@NotEmpty(message = "Taluka is required") String taluka,
+			@NotEmpty(message = "District is required") String district,
+			@NotEmpty(message = "State is required") String state,
+			@NotEmpty(message = "pincode is required") String pincode) {
 		super();
 		this.addressId = addressId;
 		this.flatOrHouseNumber = flatOrHouseNumber;
@@ -129,6 +136,8 @@ public class Address {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+
 	
 	
 

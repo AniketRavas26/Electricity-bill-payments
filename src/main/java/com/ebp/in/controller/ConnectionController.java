@@ -32,7 +32,7 @@ public class ConnectionController {
 	
 	
 	@PostMapping(value="/newRequest")
-	public ResponseEntity<Connection> newConnectionRequest(@Valid @RequestBody Connection newConnection) throws Exception
+	public ResponseEntity<Connection> newConnectionRequest(@Valid@RequestBody Connection newConnection) throws Exception
 	{
 		Connection requestedConnection= connectionService.newConnectionRequest(newConnection);
 		return new ResponseEntity<Connection>(requestedConnection,HttpStatus.CREATED);

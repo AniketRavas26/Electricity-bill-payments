@@ -52,4 +52,6 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 	public ResponseEntity<String> handleUserNotFoundException(InvalidLoginCredentialException unfe){
 		return new ResponseEntity<String>(unfe.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
 	}
+	
+	
 }

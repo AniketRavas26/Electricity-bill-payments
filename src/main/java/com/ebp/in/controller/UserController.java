@@ -1,5 +1,7 @@
 package com.ebp.in.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,13 +33,13 @@ public class UserController {
 	
 
 	@PostMapping(value = "/registerUser")
-	public ResponseEntity<User> registerUser(@RequestBody User user) throws DuplicateUserException {
+	public ResponseEntity<User> registerUser(@Valid@RequestBody User user) throws DuplicateUserException {
 		User registeredUser = userService.registerUser(user);
 		return new ResponseEntity<User>(registeredUser, HttpStatus.CREATED);
 	}
 
 	@PostMapping(value = "/loginUser")
-	public ResponseEntity<User> loginUser(@RequestBody User user) throws InvalidLoginCredentialException {
+	public ResponseEntity<User> loginUser(@Valid@RequestBody User user) throws InvalidLoginCredentialException {
 		User registeredUser = userService.loginUser(user);
 		return new ResponseEntity<User>(registeredUser, HttpStatus.OK);
 

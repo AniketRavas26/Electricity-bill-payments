@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
@@ -19,9 +20,9 @@ public class User {
 	@Column(name = "user_id")
 	private Long userId;
 	
-	@NotNull
+	@NotEmpty(message="please enter your username")
 	private String userName;
-	@NotNull
+	@NotEmpty(message="please enter your password")
 	private String password;
 	public Long getUserId() {
 		return userId;
