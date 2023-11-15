@@ -23,13 +23,13 @@ public class Address {
 
 	private String taluka;
 
-	@NotNull
+	@NotNull(message="Please enter your district")
 	private String district;
 	
-	@NotNull
+	@NotNull(message="Please enter your state")
 	private String state;
 	
-	@NotNull
+	@NotNull(message="Please enter your pincode")
 	private String pincode;
 
 	public Long getAddressId() {
@@ -112,7 +112,7 @@ public class Address {
 	}
 
 	public Address(Long addressId, int flatOrHouseNumber, String buildingName, String landmark, String village,
-			String taluk, String district, String state, String pincode) {
+			String taluka, String district, String state, String pincode) {
 		super();
 		this.addressId = addressId;
 		this.flatOrHouseNumber = flatOrHouseNumber;

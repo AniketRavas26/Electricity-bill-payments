@@ -11,9 +11,7 @@ import javax.persistence.InheritanceType;
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 @Entity(name="users")
-
 @Inheritance(strategy = InheritanceType.JOINED)
-
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

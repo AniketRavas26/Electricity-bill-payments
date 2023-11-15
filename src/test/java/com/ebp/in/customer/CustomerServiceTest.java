@@ -125,6 +125,12 @@ class CustomerServiceTest {
 	       assertThat(customerService.searchCustomerByMobile(customer1.getMobileNumber())).isEqualTo(customer1);
 	    }
 	    
+	    @Test
+	    public void givenIdThenShouldReturnCustomerOfThatMobileNumber2() throws NoSuchCustomerException {
+	       Mockito.when(cutomerRepository.readByMobileNumber(customer2.getMobileNumber())).thenReturn(Optional.ofNullable(customer2));
+	       assertThat(customerService.searchCustomerByMobile(customer2.getMobileNumber())).isEqualTo(customer2);
+	    }
+	    
 
 	    @Test
 	    public void givenIdThenShouldReturnCustomerOfThatEmail() throws NoSuchCustomerException {

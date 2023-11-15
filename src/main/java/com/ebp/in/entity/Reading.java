@@ -8,13 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+import org.springframework.lang.Nullable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /*import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;*/
 
 @Entity
- 
 public class Reading {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +31,12 @@ public class Reading {
 	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "connection_id_fk", referencedColumnName = "connectionId")
+	@JsonIgnore
 	private Connection readingForConnection;
+	
+	@Transient
+	@Nullable
+	private Long connectionId;
 
 	public Long getReadingId() {
 		return readingId;
@@ -77,15 +86,23 @@ public class Reading {
 		this.readingForConnection = readingForConnection;
 	}
 
+	public Long getConnectionId() {
+		return connectionId;
+	}
+
+	public void setConnectionId(Long connectionId) {
+		this.connectionId = connectionId;
+	}
+
 	@Override
 	public String toString() {
 		return "Reading [readingId=" + readingId + ", unitsConsumed=" + unitsConsumed + ", readingPhoto=" + readingPhoto
 				+ ", readingDate=" + readingDate + ", pricePerUnits=" + pricePerUnits + ", readingForConnection="
-				+ readingForConnection + "]";
+				+ readingForConnection + ", connectionId=" + connectionId + "]";
 	}
 
 	public Reading(Long readingId, Double unitsConsumed, String readingPhoto, Date readingDate, Double pricePerUnits,
-			Connection readingForConnection) {
+			Connection readingForConnection, Long connectionId) {
 		super();
 		this.readingId = readingId;
 		this.unitsConsumed = unitsConsumed;
@@ -93,13 +110,14 @@ public class Reading {
 		this.readingDate = readingDate;
 		this.pricePerUnits = pricePerUnits;
 		this.readingForConnection = readingForConnection;
+		this.connectionId = connectionId;
 	}
 
 	public Reading() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	
 
 }

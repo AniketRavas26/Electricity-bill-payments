@@ -11,8 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 
 import com.ebp.in.enums.ConnectionStatus;
 import com.ebp.in.enums.ConnectionType;
@@ -28,8 +30,13 @@ public class Connection {
 	private Long consumerNumber;
 
 	@OneToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
+	@JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable=true)
+	@JsonIgnore
 	private Customer customerConnection;
+	
+	@Transient
+	@Nullable
+	private Long userId;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id", referencedColumnName = "addressId")
@@ -60,13 +67,23 @@ public class Connection {
 	public void setConsumerNumber(Long consumerNumber) {
 		this.consumerNumber = consumerNumber;
 	}
+
 	public Customer getCustomerConnection() {
 		return customerConnection;
 	}
-	
+
 	public void setCustomerConnection(Customer customerConnection) {
 		this.customerConnection = customerConnection;
 	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
 	public Address getConnectionAddress() {
 		return connectionAddress;
 	}
@@ -107,26 +124,27 @@ public class Connection {
 		this.connectionStatus = connectionStatus;
 	}
 
-	public Connection(Long connectionId, Long consumerNumber, Customer customerConnection, Address connectionAddress,
-			ConnectionType connectionType, Date applicationDate, Date connectionDate,
+	@Override
+	public String toString() {
+		return "Connection [connectionId=" + connectionId + ", consumerNumber=" + consumerNumber
+				+ ", customerConnection=" + customerConnection + ", userId=" + userId + ", connectionAddress="
+				+ connectionAddress + ", connectionType=" + connectionType + ", applicationDate=" + applicationDate
+				+ ", connectionDate=" + connectionDate + ", connectionStatus=" + connectionStatus + "]";
+	}
+
+	public Connection(Long connectionId, Long consumerNumber, Customer customerConnection, Long userId,
+			Address connectionAddress, ConnectionType connectionType, Date applicationDate, Date connectionDate,
 			ConnectionStatus connectionStatus) {
 		super();
 		this.connectionId = connectionId;
 		this.consumerNumber = consumerNumber;
 		this.customerConnection = customerConnection;
+		this.userId = userId;
 		this.connectionAddress = connectionAddress;
 		this.connectionType = connectionType;
 		this.applicationDate = applicationDate;
 		this.connectionDate = connectionDate;
 		this.connectionStatus = connectionStatus;
-	}
-
-	@Override
-	public String toString() {
-		return "Connection [connectionId=" + connectionId + ", consumerNumber=" + consumerNumber
-				+ ", customerConnection=" + customerConnection + ", connectionAddress=" + connectionAddress
-				+ ", connectionType=" + connectionType + ", applicationDate=" + applicationDate + ", connectionDate="
-				+ connectionDate + ", connectionStatus=" + connectionStatus + "]";
 	}
 
 	public Connection() {
@@ -135,6 +153,6 @@ public class Connection {
 	}
 
 	
-	
+
 	
 }

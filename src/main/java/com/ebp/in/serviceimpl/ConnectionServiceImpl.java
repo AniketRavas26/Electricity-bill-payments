@@ -12,6 +12,7 @@ import com.ebp.in.entity.Customer;
 import com.ebp.in.exception.NoSuchConnectionException;
 import com.ebp.in.exception.NoSuchCustomerException;
 import com.ebp.in.repository.ConnectionRepository;
+import com.ebp.in.repository.CustomerRepository;
 import com.ebp.in.service.ConnectionService;
 
 
@@ -21,6 +22,9 @@ public class ConnectionServiceImpl implements ConnectionService {
 
 	@Autowired
 	private ConnectionRepository connectionRepository;
+	
+	@Autowired
+	private CustomerRepository customerRepository;
 	
 	/*
 	 * If connection does not exists,User can get the new connection by registering,
@@ -34,7 +38,8 @@ public class ConnectionServiceImpl implements ConnectionService {
 			throw new Exception("Connection already exist with id :" + newConnection.getConnectionId());
 		}
 
-		Customer customer = newConnection.getCustomerConnection();
+		Customer customer = customerRepository.findById(newConnection.getUserId()).get();	
+		newConnection.setCustomerConnection(customer);
 		Long userId = customer.getUserId();
 		Connection con;
 		if (userId == 0) {

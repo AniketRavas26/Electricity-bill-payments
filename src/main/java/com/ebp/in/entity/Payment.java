@@ -12,9 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import com.ebp.in.enums.PaymentMode;
 import com.ebp.in.enums.PaymentStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Payment {
@@ -118,7 +120,7 @@ public class Payment {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	
 
 }

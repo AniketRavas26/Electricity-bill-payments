@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.ebp.in.entity.Connection;
 import com.ebp.in.entity.Reading;
 import com.ebp.in.exception.NoSuchCustomerException;
+import com.ebp.in.repository.ConnectionRepository;
 import com.ebp.in.repository.ReadingRepository;
 import com.ebp.in.service.BillService;
 import com.ebp.in.service.ReadingService;
@@ -23,6 +24,9 @@ public class ReadingServiceImpl implements ReadingService {
 	@Autowired
 	private BillService billService;
 	
+	@Autowired
+	private ConnectionRepository connectionRepository;
+	
 	/*
 	 * We are generating the reading
 	 */
@@ -30,7 +34,7 @@ public class ReadingServiceImpl implements ReadingService {
 	public Reading selfSubmit(Reading reading) {
 		Double pricePerUnit = reading.getPricePerUnits();
 		Reading reading1 ;
-		Connection existingConnection = reading.getReadingForConnection();
+		Connection existingConnection = connectionRepository.findById(reading.getConnectionId()).get();
 		Long connectionId = existingConnection.getConnectionId();
 		if (connectionId == 0) {
 			reading.setPricePerUnits(pricePerUnit);

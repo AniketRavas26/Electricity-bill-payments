@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ebp.in.entity.Bill;
+import com.ebp.in.entity.Connection;
 import com.ebp.in.entity.Reading;
 import com.ebp.in.enums.ConnectionType;
 import com.ebp.in.exception.InvalidReadingException;
 import com.ebp.in.exception.NoSuchConnectionException;
 import com.ebp.in.exception.NoSuchCustomerException;
 import com.ebp.in.repository.BillRepository;
+import com.ebp.in.repository.ConnectionRepository;
 import com.ebp.in.repository.ReadingRepository;
 import com.ebp.in.service.BillService;
 
@@ -25,16 +27,20 @@ public class BillServiceImpl implements BillService {
 	
 		@Autowired
 		private ReadingRepository readingRepository;
+		
+		@Autowired
+		private ConnectionRepository connectionRepository;
 	
 		/*
 		 * Method to Generate Bill from a Reading Object,
 		 * if reading object is invalid it throws an User Defined Exception 
 		 * 
 		 */
+		@SuppressWarnings("null")
 		@Override
 		public Bill generateBill(Reading reading) throws InvalidReadingException {
 			Bill bill = new Bill();
-			Bill generatedBill;
+			Bill generatedBill = null;
 			try {
 			Long readingId = reading.getReadingId();
 			Reading existingReading = readingRepository.findById(readingId).get();

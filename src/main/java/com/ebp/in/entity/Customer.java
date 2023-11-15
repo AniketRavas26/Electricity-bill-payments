@@ -11,6 +11,13 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Customer extends User{
 	
@@ -19,7 +26,7 @@ public class Customer extends User{
 	@Column(unique = true, nullable = false)
 	private int customerId;
 	@Column(unique = true, nullable = false)
-	@NotNull(message = "Aadhaar no is Required")
+	@NotNull(message = "Adhaar no is Required")
 	private Long adharNumber;
 	@NotEmpty(message = "Name is Required")
 	private String firstName;
