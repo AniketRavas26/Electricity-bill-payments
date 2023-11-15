@@ -57,11 +57,11 @@ public class CustomerController {
 		return new ResponseEntity<Customer>(customer, HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/byid/{customerId}")
-	public ResponseEntity<Customer> searchCustomerByCustomerId(@PathVariable Long customerId)
+	@GetMapping(value = "/byid/{userId}")
+	public ResponseEntity<Customer> searchCustomerByCustomerId(@PathVariable Long userId)
 			throws NoSuchCustomerException {
 
-		Customer byId = customerService.searchCustomerByCustomerId(customerId);
+		Customer byId = customerService.searchCustomerByCustomerId(userId);
 		return new ResponseEntity<Customer>(byId, HttpStatus.OK);
 
 	}
